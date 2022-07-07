@@ -36,7 +36,7 @@ public class ProjectController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping("/by-user")
     public ResponseEntity<CommonResponse> getDataByUser() {
         CommonResponse response = service.getDataByUser();
         return new ResponseEntity<>(response, HttpStatus.OK);
