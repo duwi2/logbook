@@ -33,6 +33,9 @@ public class Tracker extends UserDateAudit {
     @Column(name = "end_hour")
     private LocalTime endHour;
 
+    @Column(name = "tracker_status")
+    private Boolean trackerStatus;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
