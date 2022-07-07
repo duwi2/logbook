@@ -73,9 +73,9 @@ public class TrackerService {
 
         ErrorSchema errorSchema = new ErrorSchema();
         ErrorMessage errorMessage = new ErrorMessage();
-        errorMessage.setEnglish("Success Login");
-        errorMessage.setBahasa("Berhasil Masuk");
-        errorSchema.setErrorCode("000000");
+        errorMessage.setEnglish(Constant.SUCCESS_EN);
+        errorMessage.setBahasa(Constant.SUCCESS_ID);
+        errorSchema.setErrorCode(Constant.SUCCESS_CODE);
         errorSchema.setErrorMessage(errorMessage);
 
         CommonResponse response = new CommonResponse();
