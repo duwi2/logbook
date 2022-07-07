@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TrackerRepository extends PagingAndSortingRepository<Tracker, Long> {
     Page<Tracker> findAllByTrackerStatus(Boolean status);
-    Page<Tracker> findAllByCreatedBy(String createdBy);
+    Page<Tracker> findByTrackerBy(String createdBy);
 }

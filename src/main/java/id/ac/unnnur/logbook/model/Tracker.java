@@ -36,6 +36,9 @@ public class Tracker extends UserDateAudit {
     @Column(name = "tracker_status")
     private Boolean trackerStatus;
 
+    @Column(name = "tracker_by")
+    private String trackerBy;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id")
     @OnDelete(action = OnDeleteAction.CASCADE)

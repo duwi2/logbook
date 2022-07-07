@@ -35,4 +35,10 @@ public class TrackerController {
         CommonResponse response = service.getAllDataTrackers();
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @GetMapping("/by-user")
+    public ResponseEntity<CommonResponse> getDataByUser() {
+        CommonResponse response = service.getDataByUser();
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }

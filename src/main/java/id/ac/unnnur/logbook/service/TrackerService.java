@@ -32,6 +32,7 @@ public class TrackerService {
         tracker.setTrackerDate(request.getTrackerDate() == null ? LocalDate.now(): request.getTrackerDate());
         tracker.setStartHour(request.getStartHour() == null ? LocalTime.now() : request.getStartHour());
         tracker.setEndHour(request.getEndHour());
+        tracker.setTrackerBy(request.getTrackerBy());
         tracker.setProject(projectService.getDataProjectById(request.getProjectId()));
         tracker.setTrackerStatus(true);
         repository.save(tracker);
@@ -68,7 +69,7 @@ public class TrackerService {
 
     public CommonResponse getDataByUser() {
         List<Tracker> trackers = new ArrayList<>();
-        repository.findAllByCreatedBy(CommonUtil.getUserLogin()).forEach(trackers::add);
+        repository.findByTrackerBy(CommonUtil.getUserLogin()).forEach(trackers::add);
 
         ErrorSchema errorSchema = new ErrorSchema();
         ErrorMessage errorMessage = new ErrorMessage();
